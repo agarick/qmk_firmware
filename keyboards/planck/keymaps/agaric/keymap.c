@@ -13,8 +13,8 @@ extern keymap_config_t keymap_config;
 // layers
 #define L_ZERO   0 // base
 #define L_ONE    1 // base extension
-#define L_TWO    2 // num + symbol
-#define L_THREE  3 // directional + device
+#define L_TWO    2 // directional + device
+#define L_THREE  3 // num + symbol
 
 // macros
 #define M_LPRN 0 // lsft + lprn
@@ -30,8 +30,8 @@ extern keymap_config_t keymap_config;
 
 const uint16_t PROGMEM fn_actions[] = {
   [1] = ACTION_LAYER_TAP_KEY(L_ONE,   KC_ENT),
-  [2] = ACTION_LAYER_TAP_KEY(L_TWO,   KC_TAB),
-  [3] = ACTION_LAYER_TAP_KEY(L_THREE, KC_BSPC),
+  [2] = ACTION_LAYER_TAP_KEY(L_TWO,   KC_BSPC),
+  [3] = ACTION_LAYER_TAP_KEY(L_THREE, KC_TAB),
   [4] = ACTION_MACRO_TAP(M_LPRN),
   [5] = ACTION_MACRO_TAP(M_RPRN),
   [6] = ACTION_MODS_TAP_KEY(MOD_LGUI, KC_LBRC),
@@ -44,78 +44,78 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* base layer
    * ┏━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┓
-   * ┃ FN2 ┃  Q  ┃  W  ┃  E  ┃  R  ┃  T  ┃  Y  ┃  U  ┃  I  ┃  O  ┃  P  ┃ FN3 ┃
+   * ┃ L3  ┃  Q  ┃  W  ┃  E  ┃  R  ┃  T  ┃  Y  ┃  U  ┃  I  ┃  O  ┃  P  ┃ L2  ┃
    * ┃ tab ┃  q  ┃  w  ┃  e  ┃  r  ┃  t  ┃  y  ┃  u  ┃  i  ┃  o  ┃  p  ┃ bsp ┃
    * ┣━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━┫
    * ┃ SFT ┃  A  ┃  S  ┃  D  ┃  F  ┃  G  ┃  H  ┃  J  ┃  K  ┃  L  ┃  :  ┃ SFT ┃
    * ┃  (  ┃  a  ┃  s  ┃  d  ┃  f  ┃  g  ┃  h  ┃  j  ┃  k  ┃  l  ┃  ;  ┃  )  ┃
    * ┣━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━┫
    * ┃ GUI ┃  Z  ┃  X  ┃  C  ┃  V  ┃  B  ┃  N  ┃  M  ┃  <  ┃  >  ┃  ?  ┃ GUI ┃
-   * ┃  [  ┃  z  ┃  x  ┃  c  ┃  v  ┃  b  ┃  n  ┃  m  ┃  ,  ┃  .  ┃  /  ┃  ]  ┃
+   * ┃ { [ ┃  z  ┃  x  ┃  c  ┃  v  ┃  b  ┃  n  ┃  m  ┃  ,  ┃  .  ┃  /  ┃ ] } ┃
    * ┣━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━┻━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━┫
-   * ┃  "  ┃  ~  ┃     ┃ ALT ┃ CTL ┃           ┃ FN1 ┃ ALT ┃ CTL ┃  +  ┃  _  ┃
+   * ┃  "  ┃  ~  ┃ HYP ┃ ALT ┃ CTL ┃           ┃ L1  ┃ AGr ┃ CTL ┃  +  ┃  _  ┃
    * ┃  '  ┃  `  ┃     ┃ del ┃ esc ┃   space   ┃ ret ┃     ┃     ┃  =  ┃  -  ┃
    * ┗━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━━━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━┛
    */
   [L_ZERO] = {
-    {F(2)   ,KC_Q  ,KC_W ,KC_E,KC_R,KC_T  ,KC_Y  ,KC_U,KC_I   ,KC_O   ,KC_P   ,F(3)},
-    {F(4)   ,KC_A  ,KC_S ,KC_D,KC_F,KC_G  ,KC_H  ,KC_J,KC_K   ,KC_L   ,KC_SCLN,F(5)},
-    {F(6)   ,KC_Z  ,KC_X ,KC_C,KC_V,KC_B  ,KC_N  ,KC_M,KC_COMM,KC_DOT ,KC_SLSH,F(7)},
-    {KC_QUOT,KC_GRV,__x__,F(8),F(9),KC_SPC,KC_SPC,F(1),KC_RALT,KC_RCTL,KC_EQL ,KC_MINS}
+    {F(3)   ,KC_Q  ,KC_W   ,KC_E,KC_R,KC_T  ,KC_Y  ,KC_U,KC_I   ,KC_O   ,KC_P   ,F(2)},
+    {F(4)   ,KC_A  ,KC_S   ,KC_D,KC_F,KC_G  ,KC_H  ,KC_J,KC_K   ,KC_L   ,KC_SCLN,F(5)},
+    {F(6)   ,KC_Z  ,KC_X   ,KC_C,KC_V,KC_B  ,KC_N  ,KC_M,KC_COMM,KC_DOT ,KC_SLSH,F(7)},
+    {KC_QUOT,KC_GRV,KC_HYPR,F(8),F(9),KC_SPC,KC_SPC,F(1),KC_RALT,KC_RCTL,KC_EQL ,KC_MINS}
   },
 
   /* 1. base extension layer
    * ┏━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┓
    * ┃/////┃  1  ┃  2  ┃  3  ┃  4  ┃  5  ┃  6  ┃  7  ┃  8  ┃  9  ┃  O  ┃/////┃
    * ┣━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━┫
-   * ┃  {  ┃  !  ┃  @  ┃  #  ┃  $  ┃  %  ┃  ^  ┃  &  ┃  *  ┃  \  ┃  |  ┃  }  ┃
+   * ┃/////┃  !  ┃  @  ┃  #  ┃  $  ┃  %  ┃  ^  ┃  &  ┃  *  ┃  |  ┃  \  ┃/////┃
    * ┣━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━┫
-   * ┃ f1  ┃ f2  ┃ f3  ┃ f4  ┃ f5  ┃ f6  ┃ f7  ┃ f8  ┃ f9  ┃ f10 ┃ f11 ┃ f12 ┃
+   * ┃/////┃ f1  ┃ f2  ┃ f3  ┃ f4  ┃ f5  ┃ f6  ┃ f7  ┃ f8  ┃ f9  ┃ f10 ┃/////┃
    * ┣━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━┻━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━┫
-   * ┃     ┃     ┃     ┃     ┃     ┃           ┃XXXXX┃     ┃     ┃     ┃     ┃
+   * ┃     ┃     ┃/////┃/////┃/////┃///////////┃XXXXX┃/////┃/////┃ f11 ┃ f12 ┃
    * ┗━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━━━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━┛
    */
   [L_ONE] = {
-    {_____  ,KC_1   ,KC_2 ,KC_3   ,KC_4  ,KC_5   ,KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   ,_____},
-    {KC_LCBR,KC_EXLM,KC_AT,KC_HASH,KC_DLR,KC_PERC,KC_CIRC,KC_AMPR,KC_ASTR,KC_BSLS,KC_PIPE,KC_RCBR},
-    {KC_F1  ,KC_F2  ,KC_F3,KC_F4  ,KC_F5 ,KC_F6  ,KC_F7  ,KC_F8  ,KC_F9  ,KC_F10 ,KC_F11 ,KC_F12},
-    {__x__  ,__x__  ,__x__,__x__  ,__x__ ,_____  ,_____  ,_____  ,__x__  ,__x__  ,__x__  ,__x__}
+    {_____,KC_1   ,KC_2 ,KC_3   ,KC_4  ,KC_5   ,KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   ,_____},
+    {_____,KC_EXLM,KC_AT,KC_HASH,KC_DLR,KC_PERC,KC_CIRC,KC_AMPR,KC_ASTR,KC_PIPE,KC_BSLS,_____},
+    {_____,KC_F1  ,KC_F2,KC_F3  ,KC_F4 ,KC_F5  ,KC_F6  ,KC_F7  ,KC_F8  ,KC_F9  ,KC_F10 ,_____},
+    {__x__,__x__  ,_____,_____  ,_____ ,_____  ,_____  ,_____  ,_____  ,_____  ,KC_F11 ,KC_F12}
   },
 
-  /* 2 num + symbol layer
+  /* 2. directional + device layer
    * ┏━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┓
-   * ┃XXXXX┃     ┃     ┃     ┃     ┃     ┃     ┃ esc ┃  7  ┃  8  ┃  9  ┃/////┃
+   * ┃/////┃ hom ┃ up  ┃ end ┃pgup ┃     ┃     ┃     ┃volx ┃vol- ┃vol+ ┃XXXXX┃
    * ┣━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━┫
-   * ┃     ┃     ┃     ┃     ┃     ┃     ┃     ┃  .  ┃  4  ┃  5  ┃  6  ┃ ret ┃
+   * ┃/////┃ lf  ┃ dn  ┃ rt  ┃pgdn ┃     ┃     ┃     ┃ up  ┃lum- ┃lum+ ┃/////┃
    * ┣━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━┫
-   * ┃     ┃     ┃     ┃     ┃     ┃     ┃     ┃  0  ┃  1  ┃  2  ┃  3  ┃ tab ┃
+   * ┃/////┃     ┃     ┃     ┃     ┃     ┃     ┃     ┃ dn  ┃     ┃     ┃/////┃
    * ┣━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━┻━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━┫
-   * ┃     ┃     ┃     ┃     ┃     ┃           ┃/////┃  +  ┃  -  ┃  *  ┃  /  ┃
+   * ┃ ins ┃ prt ┃/////┃/////┃/////┃///////////┃/////┃/////┃/////┃ lf  ┃ rt  ┃
    * ┗━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━━━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━┛
    */
   [L_TWO] = {
-    {_____,__x__,__x__,__x__,__x__,__x__,__x__,KC_ESC,KC_7   ,KC_8   ,KC_9   ,_____},
-    {__x__,__x__,__x__,__x__,__x__,__x__,__x__,KC_DOT,KC_4   ,KC_5   ,KC_6   ,KC_ENT},
-    {__x__,__x__,__x__,__x__,__x__,__x__,__x__,KC_0  ,KC_1   ,KC_2   ,KC_3   ,KC_TAB},
-    {__x__,__x__,__x__,__x__,__x__,_____,_____,_____ ,KC_PLUS,KC_MINS,KC_ASTR,KC_SLSH}
+    {_____ ,KC_HOME,KC_UP  ,KC_END ,KC_PGUP,__x__,__x__,__x__,KC_MUTE,KC_VOLD,KC_VOLU,_____},
+    {_____ ,KC_LEFT,KC_DOWN,KC_RGHT,KC_PGDN,__x__,__x__,__x__,KC_UP  ,KC_MRWD,KC_MFFD,_____},
+    {_____ ,__x__  ,__x__  ,__x__  ,__x__  ,__x__,__x__,__x__,KC_DOWN,__x__  ,__x__  ,_____},
+    {KC_INS,KC_PSCR,__x__  ,_____  ,_____  ,_____,_____,_____,_____  ,_____  ,KC_LEFT,KC_RGHT}
   },
 
-  /* 3. directional + device layer
+  /* 3. num + symbol layer
    * ┏━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┓
-   * ┃/////┃pgdn ┃ up  ┃pgup ┃     ┃     ┃     ┃     ┃     ┃     ┃     ┃XXXXX┃
+   * ┃XXXXX┃     ┃     ┃     ┃     ┃     ┃  *  ┃  +  ┃  7  ┃  8  ┃  9  ┃/////┃
    * ┣━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━┫
-   * ┃ hom ┃ lf  ┃ dn  ┃ rt  ┃ end ┃     ┃     ┃     ┃     ┃     ┃     ┃     ┃
+   * ┃/////┃     ┃     ┃     ┃     ┃     ┃  /  ┃  -  ┃  4  ┃  5  ┃  6  ┃/////┃
    * ┣━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━┫
-   * ┃     ┃     ┃     ┃     ┃     ┃     ┃     ┃     ┃     ┃     ┃     ┃     ┃
+   * ┃/////┃     ┃     ┃     ┃     ┃     ┃ esc ┃ tab ┃  1  ┃  2  ┃  3  ┃/////┃
    * ┣━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━┻━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━┫
-   * ┃ prt ┃ ins ┃     ┃     ┃     ┃           ┃/////┃     ┃     ┃     ┃     ┃
+   * ┃     ┃     ┃/////┃/////┃/////┃///////////┃/////┃/////┃  0  ┃  .  ┃ ret ┃
    * ┗━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━━━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━┛
    */
   [L_THREE] = {
-    {_____  ,KC_PGUP,KC_UP  ,KC_PGDN,__x__ ,__x__,__x__,__x__,__x__,__x__,__x__,_____},
-    {KC_HOME,KC_LEFT,KC_DOWN,KC_RGHT,KC_END,__x__,__x__,__x__,__x__,__x__,__x__,__x__},
-    {__x__  ,__x__  ,__x__  ,__x__  ,__x__ ,__x__,__x__,__x__,__x__,__x__,__x__,__x__},
-    {KC_PSCR,KC_INS ,__x__  ,__x__  ,__x__ ,_____,_____,_____,__x__,__x__,__x__,__x__}
+    {_____,__x__,__x__,__x__,__x__,__x__,KC_ASTR,KC_PLUS,KC_7 ,KC_8,KC_9  ,_____},
+    {_____,__x__,__x__,__x__,__x__,__x__,KC_SLSH,KC_MINS,KC_4 ,KC_5,KC_6  ,_____},
+    {_____,__x__,__x__,__x__,__x__,__x__,KC_ESC ,KC_TAB ,KC_1 ,KC_2,KC_3  ,_____},
+    {__x__,__x__,_____,_____,_____,_____,_____  ,_____  ,_____,KC_0,KC_DOT,KC_ENT}
   },
 };
 
