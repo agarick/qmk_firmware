@@ -2,6 +2,8 @@
 
 **flashing on linux**
 
+1. Make sure `docker` and `dfu-programmer` are installed.
+
 1. Physically poke the little button on the back of the PCB in order to enter *flash-ready* mode.
 
 1. Compile the firmware and flash the keyboard with it.
